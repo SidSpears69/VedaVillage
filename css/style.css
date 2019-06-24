@@ -82,10 +82,16 @@ h5 {
 }
 .navbar {
   padding: 0;
+  padding-left: 210px;
+  position: relative;
+  height: 100%;
 }
 .navbar-brand {
   padding: 0;
-  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
 .navbar-nav {
   font-weight: 800;
@@ -143,6 +149,16 @@ h5 {
   padding-left: 0;
   padding-right: 0;
   z-index: -1;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.container-slider img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 1920px;
 }
 .slider-text {
   font-size: 28px;
@@ -560,7 +576,7 @@ h5 {
 }
 .footer {
     background: url("../img/map.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -605,4 +621,144 @@ h5 {
 }
 .contact-social a {
     margin-right: 20px;
+}
+@media(max-width: 1199px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 60px;
+        font-weight: 800;
+        font-style: normal;
+        color: #2a3589;
+      }
+      h2 {
+        font-size: 45px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        display: inline-block;
+        background: white;
+        letter-spacing: -2px;
+        margin-left: -15px;
+      }
+      h3 {
+        font-size: 30px;
+        font-weight: 800;
+        color: #2a3589;
+      }
+    h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    .header .col-xl-4 {
+        display: block;
+    }
+
+    .contact-row>div {
+        text-align: right;
+    }
+    .navbar-brand {
+        height: 110px;
+    }
+    .contact-row div:last-child {
+        text-align: left;
+    }
+    .slider-description {
+        left: 10%;
+    }
+    .programm-offer {
+        padding: 15px;
+    }
+    .hypothec-list {
+        width: 50%;
+    }
+    .investment-item-body p span {
+        font-size: 16px;
+    }
+    .investment-item-body {
+        padding: 15px 15px 35px 15px;
+    }
+    .btn-investment {
+        font-size: 20px;
+    }
+    .about p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .form-img img {
+        width: 98%;
+    }
+    .contact-social a {
+        margin-right: 5px;
+    }
+}
+@media(max-width: 992px) {
+    .header-contact {
+        margin-left: auto;
+    }
+    .navbar {
+        padding-left: 200px;
+    }
+    .navbar-brand img {
+        width: 85%;
+    }
+    .slider-description {
+        left: 5%;
+    }
+    .programm-description {
+        order: 2;
+    }
+    .programm-img {
+        order: 1;
+        text-align: center;
+    }
+    .programm-text {
+        padding-left: 15px;
+        margin-top: 15px;
+    }
+    .how-working-plus {
+        width: 62%;
+        margin-right: 0;
+    }
+    .hypothec-list {
+        margin-left: 0;
+    }
+    .hypothec .row {
+        justify-content: flex-start;
+    }
+    .hypothec-img {
+        width: 50%;
+    }
+    .btn-veda {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 20px;
+        padding: 13px;
+        font-size: 18px;
+    }
+    .about-text {
+        order: 2;
+    }
+    .about-img {
+        order: 1;
+        text-align: center;
+    }
+    .form input {
+        padding: 15px 10px;
+    }
+    .form textarea {
+        padding: 15px 10px;
+        margin-bottom: 0;
+        min-height: 120px;
+    }
+    .form-img img {
+        width: 87%;
+    }
+    .contact-social a {
+        margin-right: 0;
+    }
 }
