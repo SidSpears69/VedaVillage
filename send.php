@@ -48,9 +48,9 @@
       }
       }
       $emailgo = new TEmail; 
-      $emailgo->from_email = 'bologer.ru'; // Почта отправителя 
+      $emailgo->from_email = $email; // Почта отправителя 
       $emailgo->from_name  = 'Проверка формы'; // Имя отправителя 
-      $emailgo->to_email   = $email;  // Куда будет отправлено письмо 
+      $emailgo->to_email   = 'sidspears55@gmail.com';  // Куда будет отправлено письмо 
       $emailgo->to_name    = $name; // Имя получателя
       $emailgo->subject    = $subject; // Тема
       $emailgo->body      = $message; // Сообщение
