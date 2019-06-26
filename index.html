@@ -8,14 +8,15 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/all.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/magnific.css">
-        <link rel="stylesheet" href="css/swiper.min.css">
+        <link href="css/magnific.css" rel="stylesheet">
+        <link href="css/swiper.min.css" rel="stylesheet">
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/jquery.maskedinput.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/magnific.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
-        
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=2e6dcaf0-4763-4777-ac19-53a8661cf62&lang=ru_RU" type="text/javascript">
+    </script>
     </head>
     <body>
         <header class="header">
@@ -54,7 +55,7 @@
                         <div class="row contact-row">
                             <div class="col-md-6 col-sm-12">
                                 <a href="tel:+7 (800) 222-51-08">+7 (800) 222-51-08</a>
-                                <a href="#feedback" class="btn btn-contact btn-feedback" type="button">
+                                <a class="btn-contact btn-feedback" href="#feedback" type="button">
                                     <img alt="" class="phone" src="img/phone.svg">
                                     Заказать звонок</a>
                             </div>
@@ -90,7 +91,7 @@
                             Мы строим первый вегетарианский жилой комплекс
                             <b>«Veda village»</b>
                             и привлекаем деньги частных инвесторов
-                            под 18% годовых
+                                                        под 18% годовых
                         </p>
                         <div class="programm-offer">
                             <h4>
@@ -136,8 +137,8 @@
                 </div>
                 <div class="row how-working-request">
                     <p class="how-working-plus">Таким образом, каждый остается в плюсе. Вы получаете пассивный доход,
-                        а мы привлекаем средства для дальнейшего развития компании</p>
-                    <a href="#feedback" class="btn btn-veda btn-feedback" type="button">Оставить заявку</a>
+                                                а мы привлекаем средства для дальнейшего развития компании</p>
+                    <a class="btn btn-veda btn-feedback" href="#feedback" type="button">Оставить заявку</a>
                 </div>
             </div>
         </section>
@@ -162,22 +163,61 @@
                 <h2>F.A.Q</h2>
                 <div class="row">
                     <div class="faq-list">
-                        <ul class="list-unstyled">
-                            <li>Что делать, если не хватает на первый взнос? Возможен ли трейд-ин существующей недвижимости?</li>
-                            <li>Как можно ознакомиться с образцами документов?</li>
-                            <li>Как защищаются риски инвестора?</li>
-                            <li>Что делать, если не хватает на первый взнос? Возможен ли трейд-ин существующей недвижимости?</li>
-                        </ul>
-                    </div>
-                    <div class="faq-popup">
-                        <p>Образцы договоров наш менеджер может выслать вам на электронную почту. Для этого достаточно отправить заявку.</p>
-                        <p>С правоустанавливающими документами и темпами строительства на наши апартаменты вы можете ознакомиться на промосайтах наших проектов:</p>
-                        <p>Клубный дом “Veda village” —
-                            <a href="#">документация</a>
-                            и
-                            <a href="#">темпы строительства</a>
-                        </p>
-                    </div>
+                        <div class="faq-option">
+                                <label for="option1">
+                                        <input id="option1" name="option" type="radio" checked>
+                                        <p>Что делать, если не хватает на первый взнос? Возможен ли трейд-ин существующей недвижимости?</p>
+                                        <div class="faq-popup">
+                                            <p>Образцы договоров наш менеджер может выслать вам на электронную почту. Для этого достаточно отправить заявку.</p>
+                                            <p>С правоустанавливающими документами и темпами строительства на наши апартаменты вы можете ознакомиться на промосайтах наших проектов:</p>
+                                            <p>Клубный дом “Veda village” —
+                                                <a href="#">документация</a>
+                                                и
+                                                <a href="#">темпы строительства</a>
+                                            </p>
+                                        </div>
+                                    </label>
+                                    <label for="option2">
+                                        <input id="option2" name="option" type="radio">
+                                        <p>Как можно ознакомиться с образцами документов?</p>
+                                        <div class="faq-popup">
+                                            <p>Образцы договоров наш менеджер может выслать вам на электронную почту. Для этого достаточно отправить заявку.</p>
+                                            <p>С правоустанавливающими документами и темпами строительства на наши апартаменты вы можете ознакомиться на промосайтах наших проектов:</p>
+                                            <p>Клубный дом “Veda village” —
+                                                <a href="#">документация</a>
+                                                и
+                                                <a href="#">темпы строительства</a>
+                                            </p>
+                                        </div>
+                                    </label>
+                                    <label for="option3">
+                                            <input id="option3" name="option" type="radio">
+                                            <p>Как защищаются риски инвестора?</p>
+                                            <div class="faq-popup">
+                                                <p>Образцы договоров наш менеджер может выслать вам на электронную почту. Для этого достаточно отправить заявку.</p>
+                                                <p>С правоустанавливающими документами и темпами строительства на наши апартаменты вы можете ознакомиться на промосайтах наших проектов:</p>
+                                                <p>Клубный дом “Veda village” —
+                                                    <a href="#">документация</a>
+                                                    и
+                                                    <a href="#">темпы строительства</a>
+                                                </p>
+                                            </div>
+                                    </label>
+                                    <label for="option4">
+                                            <input id="option4" name="option" type="radio">
+                                            <p>Что делать, если не хватает на первый взнос? Возможен ли трейд-ин существующей недвижимости?</p>
+                                            <div class="faq-popup">
+                                                <p>Образцы договоров наш менеджер может выслать вам на электронную почту. Для этого достаточно отправить заявку.</p>
+                                                <p>С правоустанавливающими документами и темпами строительства на наши апартаменты вы можете ознакомиться на промосайтах наших проектов:</p>
+                                                <p>Клубный дом “Veda village” —
+                                                    <a href="#">документация</a>
+                                                    и
+                                                    <a href="#">темпы строительства</a>
+                                                </p>
+                                            </div>
+                                    </label>
+                                </div>
+                        </div>
                     <div class="faq-form">
                         <h3>
                             Остались вопросы?
@@ -189,7 +229,7 @@
                             <input placeholder="Имя" type="text">
                             <input placeholder="Эл. почта" type="email">
                             <input placeholder="+ 7 (___) ___-__-__" type="tel">
-                            <button class="btn btn-veda" type="submit">Оставить заявку</button>
+                            <button class="btn btn-veda btn-feedback" type="submit" href="#feedback">Оставить заявку</button>
                         </form>
                     </div>
                 </div>
@@ -213,7 +253,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -231,7 +271,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment btn-investment-booked" type="button">Забронировано</button>
+                                <a href="#book" class="btn btn-investment btn-investment-booked" type="button">Забронировано</a>
                             </div>
                         </div>
                     </div>
@@ -250,7 +290,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -268,7 +308,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" disabled type="button">Продано</button>
+                                <a href="#book" class="btn btn-investment btn-investment-sold" type="button">Продано</a>
                             </div>
                         </div>
                     </div>
@@ -286,7 +326,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +344,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -322,7 +362,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -340,7 +380,7 @@
                                 <p class="investment-item-loan">22 550 ₽</p>
                                 <p>Доход в месяц за собственные средства</p>
                                 <p class="investment-item-self">62 119 ₽</p>
-                                <button class="btn btn-investment" type="button">Забронировать</button>
+                                <a href="#book" class="btn btn-investment" type="button">Забронировать</a>
                             </div>
                         </div>
                     </div>
@@ -360,22 +400,22 @@
                         </p>
                         <p>
                             Компания ООО «Веда-Хаус» работает на рынке недвижимости с 2010 года,
-                                                                                    и за это время она зарекомендовала себя как стабильно развивающаяся организация со всей необходимой базой для осуществления полного цикла строительных работ.
+                                                                                                                и за это время она зарекомендовала себя как стабильно развивающаяся организация со всей необходимой базой для осуществления полного цикла строительных работ.
                         </p>
                         <p>
                             Флагманским проектом компании является проект «Veda Village» – 
-                                                                                    клубный жилой комплекс для вегетарианцев в Заневском городском поселении Всеволожского муниципального района Санкт-Петербурга.
-                                                                                    Согласно проекту, в семи кирпичных четырёхэтажных домах размещаются более 210 квартир, 
-                                                                                    включая двухуровневые квартиры уникальных планировочных решений на верхних этажах. 
-                                                                                    Сдача ЖК «Veda Village» запланирована на 2021 год.
+                                                                                                                клубный жилой комплекс для вегетарианцев в Заневском городском поселении Всеволожского муниципального района Санкт-Петербурга.
+                                                                                                                Согласно проекту, в семи кирпичных четырёхэтажных домах размещаются более 210 квартир, 
+                                                                                                                включая двухуровневые квартиры уникальных планировочных решений на верхних этажах. 
+                                                                                                                Сдача ЖК «Veda Village» запланирована на 2021 год.
                         </p>
                         <p>
                             В конце 2018 года стартует строительство крупного жилого комплекса в Московском регионе, 
-                                                                                    а также планируется строительство еще ряда объектов в Санкт-Петербурге и Московской области.
+                                                                                                                а также планируется строительство еще ряда объектов в Санкт-Петербурге и Московской области.
                         </p>
                     </div>
                     <div class="col-lg-6 col-md-12 about-img">
-                        <img class="img-fluid" alt="" src="img/slide.jpg">
+                        <img alt="" class="img-fluid" src="img/slide.jpg">
                     </div>
                 </div>
             </div>
@@ -384,12 +424,12 @@
             <div class="container">
                 <div class="row">
                     <div class="form-img">
-                        <img class="img-fluid" alt="" src="img/people.png">
+                        <img alt="" class="img-fluid" src="img/people.png">
                     </div>
                     <div class="col-md-7 form-wrapper">
                         <h2>Оставьте заявку</h2>
                         <p>Оставьте заявку и наш менеджер свяжется с Вами и ответит на все Ваши вопросы</p>
-                        <form action="post">
+                        <form method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <input placeholder="Имя" type="text">
@@ -413,70 +453,176 @@
                         Наши контакты
                     </h4>
                     <p class="contact-item contact-item-phone">+7 (812) 425 63 88</p>
-                    <p class="contact-item contact-item-email"> info@vedavillage.ru</p>
-                    <p class="contact-item contact-item-address">Офис продаж:<span>Санкт-Петербург, мкр-н Заневка, ул. Ладожская, 38</span></p>
-                    <p class="contact-item contact-item-clock">Рабочее время: <span>пн — пт, с 10:00 до 20:00</span></p>
+                    <p class="contact-item contact-item-email">
+                        info@vedavillage.ru</p>
+                    <p class="contact-item contact-item-address">Офис продаж:<span>Санкт-Петербург, мкр-н Заневка, ул. Ладожская, 38</span>
+                    </p>
+                    <p class="contact-item contact-item-clock">Рабочее время:
+                        <span>пн — пт, с 10:00 до 20:00</span>
+                    </p>
                     <h4>Мы в соцсетях</h4>
                     <div class="contact-social">
-                        <a href="#" title="Вконтакте"><img src="img/vkontakte.svg" alt=""></a>
-                        <a href="#" title="Facebook"><img src="img/facebook.svg" alt=""></a>
-                        <a href="#" title="Instagramm"><img src="img/instagram.svg" alt=""></a>
-                        <a href="#" title="YouTube"><img src="img/youtube.svg" alt=""></a>
+                        <a href="#" title="Вконтакте"><img alt="" src="img/vkontakte.svg"></a>
+                        <a href="#" title="Facebook"><img alt="" src="img/facebook.svg"></a>
+                        <a href="#" title="Instagramm"><img alt="" src="img/instagram.svg"></a>
+                        <a href="#" title="YouTube"><img alt="" src="img/youtube.svg"></a>
                     </div>
                 </div>
             </div>
+            <div id="yandex-map"></div>
         </footer>
         <section class="popup-form mfp-hide" id="feedback">
             <div class="popup-wrapper">
-                    <h2>Получить консультацию</h2>
-                    <p>Оставьте заявку и наш менеджер свяжется с Вами и ответит на все Ваши вопросы</p>
-                    <button class="popup-close"><img src="img/close.svg" alt=""></button>
-                        <form>
-                            <div class="row">
-                            <div class="col-md-6">
-                                <input placeholder="Имя" type="text" pattern="^[А-Яа-яЁё\s]+$">
-                                <input placeholder="Эл. почта" type="email" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})">
-                                <input placeholder="+ 7 (___) ___-__-__" type="tel" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]-{2}-[0-9]{2}">
-                            </div>
-                            <div class="col-md-6">
-                                <textarea placeholder="Сообщение"></textarea>
-                                <button class="btn btn-veda" type="submit">Оставить заявку</button>
-                            </div>
+                <h2>Получить консультацию</h2>
+                <p>Оставьте заявку и наш менеджер свяжется с Вами и ответит на все Ваши вопросы</p>
+                <button class="popup-close">Закрыть окно</button>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text">
+                            <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email">
+                            <input pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]-{2}-[0-9]{2}" placeholder="+ 7 (___) ___-__-__" type="tel">
                         </div>
-                        </form>
+                        <div class="col-md-6">
+                            <textarea placeholder="Сообщение"></textarea>
+                            <button class="btn btn-veda" type="submit">Оставить заявку</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-        $("input[type='tel']").mask("+ 7 (999) 999-99-99");
-        $('.btn-feedback').magnificPopup({
-            type: 'inline',
-            modal: true,
-            fixedContentPos: true,
-            fixedBgPos: false,
+        <section class="popup-investment mfp-hide" id="book">
+                <div class="popup-wrapper">
+                                <div class="investment-item-header investment-item-header-popup">
+                                    <h5>Инвестиционный пакет 1</h5>
+                                    <p class="investment-item-price">4 510 000 ₽</p>
+                                    <button class="popup-close">Закрыть окно</button>
+                                </div>
+                                <div class="popup-investment-body">
+                                    <h5>Выберите способ инвестиции</h5>
+                                    <form method="POST" action="" class="popup-investment-form">
+                                        <div class="row">
+                                            <div class="col-md-6 popup-investment-loan">
+                                                <p class="popup-investment-small">Необходимый подтвержденный доход</p>
+                                                    <input type="radio" name="money" id="loan" value="Заемные" checked>
+                                                    <label for="loan">
+                                                    Заемные
+                                                </label>
+                                                <p>Доход в месяц: <span>22 550 ₽</span></p>
+                                            </div>
+                                            <div class="col-md-6 popup-investment-self">
+                                                    <input type="radio" name="money" id="self" value="Собственные">
+                                                    <label for="self">
+                                                        Собственные
+                                                </label>
+                                                <p>Доход в месяц: <span>62 119 ₽</span></p>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <h5>Заполните заявку</h5>
+                                                <div class="row">
+                                                        <div class="col-md-6">
+                                                                <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text">
+                                                                <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email">
+                                                                <input pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]-{2}-[0-9]{2}" placeholder="+ 7 (___) ___-__-__" type="tel">
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <textarea placeholder="Сообщение"></textarea>
+                                                                <button class="btn btn-veda btn-book" type="submit">Забронировать</button>
+                                                        </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                       
+                                    </form>
+                                
+                        </div>
+                </div>
+            </section>
+            
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+                $("input[type='tel']").mask("+ 7 (999) 999-99-99");
+                $('.btn-feedback').magnificPopup({
+                    type: 'inline',
+                    modal: true,
+                    fixedContentPos: true,
+                    fixedBgPos: false,
 
-            overflowY: 'auto',
+                    overflowY: 'auto',
 
-            closeBtnInside: true,
-            preloader: false,
+                    closeBtnInside: true,
+                    preloader: false,
 
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'mfp-fade'
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'mfp-fade'
+                });
+                $('.btn-investment').magnificPopup({
+                    type: 'inline',
+                    modal: true,
+                    fixedContentPos: true,
+                    fixedBgPos: false,
+
+                    overflowY: 'auto',
+
+                    closeBtnInside: true,
+                    preloader: false,
+
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'mfp-fade'
+                });
+                $(".investment-item").click(function() {
+                    var header = $(this).find(".investment-item-header");
+                    var color = header.css("background-color");
+                    $(".investment-item-header-popup").css("background-color", color)
+                })
+                $(document).on('click', '.popup-close', function () {
+                    $.magnificPopup.close();
+                });
+                var mySwiper = new Swiper(".swiper-container", {
+                    mode: 'horizontal',
+                    slidesPerView: 1,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    },
+                    loop: true
+                });
+                $(document).on('click', '.popup-close', function () {
+                    $.magnificPopup.close();
+                });
+                ymaps.ready(init);
+    function init(){ 
+        // Создание карты.    
+        var myMap = new ymaps.Map("yandex-map", {
+            center: [59.9403, 30.5075],
+            zoom: 16,
+            controls: []
         });
-        $(document).on('click', '.popup-close', function () {
-            $.magnificPopup.close();
-        });
-        var mySwiper = new Swiper (".swiper-container", {
-            mode: 'horizontal',
-    slidesPerView: 1,
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
-      spaceBetween: 30,
-    loop: true
-        });  
-    })
-</script>
-<script src="js/swiper.min.js"></script>
+        myMap.controls.remove('searchControl');
+        myMap.behaviors.disable('scrollZoom');
+ 
+    myMap.controls.add('zoomControl', {
+        position: {top: 100, right: 15}
+    });
+    myMap.controls.add('geolocationControl', {
+        position: {top: 50, right: 15}
+    });
+    var myPlacemark = new ymaps.Placemark([59.9406, 30.5129] , {},
+        { iconLayout: 'default#image',
+          iconImageHref: 'img/location-icon.png',
+          iconImageSize: [48, 60],
+          iconImageOffset: [-23, -70] 
+        });     
+ 
+    myMap.geoObjects.add(myPlacemark);
+ };
+ 
+            })
+        </script>
+        <script src="js/swiper.min.js"></script>
     </body>
 </html>

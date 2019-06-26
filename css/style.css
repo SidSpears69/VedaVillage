@@ -91,6 +91,7 @@ input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 input:focus {
 border: 2px solid #338ABE;
 }
@@ -181,10 +182,13 @@ border: 2px solid #338ABE;
 }
 .slider {
   margin-top: 35px;
-}
-
-.container-slider {
   max-width: 1920px;
+  overflow: hidden;
+}
+.swiper-slide-duplicate {
+  overflow: hidden;
+}
+.container-slider {
   position: relative;
   padding-left: 0;
   padding-right: 0;
@@ -375,10 +379,13 @@ color: #ffffff;
   margin-bottom: 80px;
 }
 .faq-list {
-  width: 55%;
   padding-left: 97px;
   position: relative;
 }
+.faq-option {
+  border: 10px solid #2A3589;
+  width: 53%
+} 
 .faq-list::before {
   content: "";
   display: block;
@@ -390,22 +397,31 @@ color: #ffffff;
   top: 0;
   left: 0;
 }
-.faq-list ul {
+.faq-list label {
+  width: 100%;
   margin-bottom: 0;
-  border: 10px solid #2a3589;
-  z-index: 0;
+  border-bottom: 2px solid #E0E0E0;
 }
-.faq-list li {
+.faq-list label:last-child {
+  border-bottom: 0;
+}
+.faq-list label p{
+  padding: 20px;
+  width: 100%;
   display: block;
-  padding: 15px 30px;
-  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 0;
+  padding-right: 40px;
 }
-.faq-list li:last-child {
-  border: none;
+.faq-list input[type="radio"] {
+  display: none;
 }
-.faq-list li:hover {
-  background-color: #338abe;
+.faq-list input[type="radio"]:checked ~ p {
+  background: #338ABE;
 }
+.faq-list input[type="radio"]:checked ~ .faq-popup {
+  display: block;
+}
+
 .faq-popup {
   background: #ffffff;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
@@ -413,6 +429,10 @@ color: #ffffff;
   padding: 20px;
   width: 40%;
   min-height: 313px;
+  display: none;
+  right: 90px;
+  top: -20px;
+  position: absolute;
 }
 .faq .row {
   align-items: center;
@@ -523,6 +543,10 @@ color: #ffffff;
 .btn-investment-booked {
   text-decoration: none;
   color: #000000;
+  pointer-events: none;
+}
+.btn-investment-sold {
+  pointer-events: none;
 }
 .investment-item-sold .investment-item-body {
   background: #f2f2f2;
@@ -594,16 +618,19 @@ color: #ffffff;
     width: 100%;
 }
 .footer {
-    background: url("../img/map.jpg") no-repeat;
-    background-size: 100% 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 490px;
+}
+.footer .container {
+  position: relative;
 }
 .contact {
     background: #FFFFFF;
     border: 10px solid #2A3589;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
     padding: 30px;
+    position: absolute;
+    top: 20px;
+    z-index: 100;
 }
 .contact-item {
     padding-left: 40px;
@@ -672,6 +699,10 @@ color: #ffffff;
   margin-left: auto;
   margin-right: auto;
 }
+.popup-form .btn-veda {
+  width: 100%;
+  margin-top: 0;
+}
 .popup-wrapper {
   position: relative;
   padding-top: 15px;
@@ -683,7 +714,26 @@ color: #ffffff;
   position: absolute;
   top: 0;
   right: 0;
+  font-size: 0;
+  height: 17px;
+  width: 17px;;
 }
+.popup-close:before,
+.popup-close:after {
+  position: absolute;
+  left: 8px;
+  content: ' ';
+  height: 18px;
+  width: 2px;
+  background-color: #000000;
+  top: 0px;
+  }
+  .popup-close:before {
+    transform: rotate(45deg);
+  }
+  .popup-close:after {
+    transform: rotate(-45deg);
+  }
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%232A3589'%2F%3E%3C%2Fsvg%3E") !important;
 	right: 15% !important;
@@ -691,6 +741,93 @@ color: #ffffff;
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%232A3589'%2F%3E%3C%2Fsvg%3E") !important;
 	left: 15% !important;
+}
+.popup-investment {
+  max-width: 768px;
+  width: 67%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.popup-investment-body {
+  padding: 20px 100px 47px;
+  background: #ffffff;
+}
+.popup-investment-body h5 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.popup-investment-form {
+  margin-top: 15px;
+}
+.popup-investment-small {
+  font-size: 12px;
+  color: #BDBDBD;
+}
+.popup-investment-self {
+  margin-top: auto;
+}
+.popup-investment-form label {
+  padding-left: 40px;
+  position: relative;
+}
+.popup-investment-form label::before {
+  content: "";
+  display: block;
+  background: #ffffff;
+  border: 2px solid #338ABE;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.popup-investment-form input[type="radio"] {
+  display: none;
+}
+.popup-investment-form input[type="radio"]:checked~label::before{
+  background: #338ABE;
+}
+.popup-investment-form input[type="radio"]:checked~label::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  background: url(../img/check.svg) no-repeat;
+}
+.popup-investment-body p {
+  font-weight: 300;
+}
+.popup-investment span{
+  font-weight: 800;
+  font-size: 24px;
+}
+.popup-investment-loan span{
+  color: #338abe;
+}
+.popup-investment-self span{
+  color: #2A3589;
+}
+.popup-investment-body .btn-veda {
+  width: 100%;
+}
+.popup-investment .investment-item-header {
+  position: relative;
+}
+.popup-investment .popup-close {
+  top: 20px;
+  right: 20px;
+}
+.popup-investment .popup-close::before,
+.popup-investment .popup-close::after {
+  background: #FFFFFF;
+}
+#yandex-map {
+  width: 100%;
+  height: 100%;
 }
 @media(max-width: 1199px) {
     body {
@@ -728,6 +865,12 @@ color: #ffffff;
     .slider-description {
         left: 10%;
     }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+      right: 5% !important;
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+      left: 5% !important;
+    }
     .programm::before,
     .how-working::before,
     .hypothec::before,
@@ -761,8 +904,14 @@ color: #ffffff;
     .contact-social a {
         margin-right: 5px;
     }
+    .popup-investment-body {
+      padding: 20px 70px 47px;
+    }
 }
 @media(max-width: 991px) {
+  textarea {
+    min-height: 148px;
+  }
     .header-contact {
         margin-left: auto;
     }
@@ -772,10 +921,21 @@ color: #ffffff;
     .navbar-brand img {
         width: 85%;
     }
-    .slider-description {
-        left: 5%;
+    .container-slider img {
+      width: 1700px;
     }
-   
+    .slider {
+      margin-top: 10px;
+    }
+    .slider-description {
+        left: 7%;
+    }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+      right: 10px !important;
+    }
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+      left: 10px !important;
+    }
     .programm-description {
         order: 2;
     }
@@ -829,6 +989,30 @@ color: #ffffff;
     }
     .contact-social a {
         margin-right: 0;
+    }
+    .popup-form .row {
+      width: 100%;
+    }
+    .popup-form {
+      padding: 10px;
+    }
+    .faq-option {
+      width: 54%;
+      margin-bottom: 20px;
+    }
+    .faq-popup {
+      padding: 0;
+      width: 44%;
+      right: 0;
+      top: -10px;
+    }
+    .popup-investment {
+      width: 90%;
+    }
+    .popup-investment .btn-veda,
+    .popup-form .btn-veda {
+      margin-top: 0;
+      padding: 20px;
     }
 }
 @media(max-width: 767px) {
@@ -917,6 +1101,25 @@ color: #ffffff;
     .form textarea {
         margin-top: 20px;
     }
+    .faq-option {
+      width: 100%;
+    }
+    .faq-popup {
+      position: static;
+      width: 100%;
+      min-height: auto;
+    }
+    .faq-form {
+      margin-left: 0;
+    }
+    .faq-form form {
+      text-align: center;
+    }
+    .popup-investment input[type="tel"],
+    .popup-form  input[type="tel"]{
+      margin-bottom: 20px;
+    }
+    
 }
 @media(max-width: 575px) {
   h2 {
@@ -942,6 +1145,9 @@ color: #ffffff;
   }
   .footer {
     background: none;
+  }
+  .navbar-collapse {
+    margin-top: 60px;
   }
   .header-contact {
     margin-top: 50px;
@@ -978,5 +1184,29 @@ color: #ffffff;
   .about-img {
     padding-left: 0;
     padding-right: 0;
+  }
+  .popup-form {
+    width: 90%;
+  }
+  .investment-item-header {
+    padding-left: 5px;
+  }
+  .popup-investment-body {
+    padding: 20px;
+  }
+  .contact {
+    padding: 5px;
+    left: 0;
+    position: static;
+    box-shadow: none;
+  }
+  .footer {
+    height: auto;
+  }
+  .footer .container {
+    padding: 0;
+  }
+  #yandex-map {
+    display: none;
   }
 }
