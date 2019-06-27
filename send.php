@@ -4,8 +4,14 @@
       $name = htmlspecialchars($_POST["name"]); 
       $email = htmlspecialchars($_POST["email"]);
       $message = htmlspecialchars($_POST["message"]);
+      $phone = htmlspecialchars($_POST["phone"]);
+      $header = htmlspecialchars($_POST["header"]);
+      $price = htmlspecialchars($_POST["price"]);
+      $money = htmlspecialchars($_POST["money"]);
+      $self = htmlspecialchars($_POST["self-money"]);
+      $loan = htmlspecialchars($_POST["loan-money"]);
       $json = array(); 
-      if (!$name or !$email or !$message) { 
+      if (!$name or !$email) { 
         $json['error'] = 'Вы зaпoлнили нe всe пoля.'; 
         echo json_encode($json); 
         die();
@@ -48,12 +54,21 @@
       }
       }
       $emailgo = new TEmail; 
-      $emailgo->from_email = $email; // Почта отправителя 
-      $emailgo->from_name  = 'Проверка формы'; // Имя отправителя 
-      $emailgo->to_email   = 'sidspears55@gmail.com';  // Куда будет отправлено письмо 
-      $emailgo->to_name    = $name; // Имя получателя
-      $emailgo->subject    = $subject; // Тема
-      $emailgo->body      = $message; // Сообщение
+      $emailgo->from_email =  $email; // Почта отправителя 
+      $emailgo->from_name  = $name; // Имя отправителя 
+      $emailgo->to_email   = "sidspears55@gmail.com";  // Куда будет отправлено письмо 
+      $emailgo->subject    = "Заявка с сайта"; // Тема
+      if(!$header) {
+        $emailgo->body      = "Имя: ".$name." Телефон: ".$phone." Сообщение ".$message; // Сообщение
+      }
+      else {
+        if($money == "Заемные") {
+          $emailgo->body      ="Имя: ".$name." Телефон: ".$phone." Сообщение ".$message."\r\n".$header." Стоимостью: ".$price."рублей Способ инвестиции: ".$money." Доход в месяц: ".$loan." рублей";
+        }
+        else {
+          $emailgo->body      = "Имя: ".$name." Телефон: ".$phone." Сообщение ".$message."\r\n".$header." Стоимостью: ".$price."рублей Способ инвестиции: ".$money." Доход в месяц: ".$self." рублей";
+        }
+      }
       $emailgo->send(); 
       $json['error'] = 0;
       echo json_encode($json); 

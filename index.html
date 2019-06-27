@@ -224,11 +224,11 @@
                         <p>
                             Заполните заявку, мы свяжемся и все расскажем подробнее.
                         </p>
-                        <form action="post">
-                            <input placeholder="Имя" type="text">
-                            <input placeholder="Эл. почта" type="email">
-                            <input placeholder="+ 7 (___) ___-__-__" type="tel">
-                            <button class="btn btn-veda btn-feedback" type="submit" href="#feedback">Оставить заявку</button>
+                        <form id="faq-form" action method="post">
+                            <input placeholder="Имя" type="text" name="name">
+                            <input placeholder="Эл. почта" type="email" name="email">
+                            <input placeholder="+ 7 (___) ___-__-__" type="tel" name="phone">
+                            <input type="submit" class="btn btn-veda" value="Оставить заявку">
                         </form>
                     </div>
                 </div>
@@ -428,16 +428,16 @@
                     <div class="col-md-7 form-wrapper">
                         <h2>Оставьте заявку</h2>
                         <p>Оставьте заявку и наш менеджер свяжется с Вами и ответит на все Ваши вопросы</p>
-                        <form method="post">
+                        <form method="post" id="form-footer" action>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input placeholder="Имя" type="text">
-                                    <input placeholder="Эл. почта" type="email">
-                                    <input placeholder="+ 7 (___) ___-__-__" type="tel">
+                                    <input placeholder="Имя" type="text" name="name">
+                                    <input placeholder="Эл. почта" type="email" name="email">
+                                    <input placeholder="+ 7 (___) ___-__-__" type="tel" name="phone">
                                 </div>
                                 <div class="col-md-6">
-                                    <textarea placeholder="Сообщение"></textarea>
-                                    <button class="btn btn-veda" type="submit">Оставить заявку</button>
+                                    <textarea placeholder="Сообщение" name="message"></textarea>
+                                    <input class="btn btn-veda" type="submit" value="Оставить заявку">
                                 </div>
                             </div>
                         </form>
@@ -470,39 +470,38 @@
             </div>
             <div id="yandex-map"></div>
         </footer>
-        <section class="popup-form mfp-hide" id="feedback" action method="post">
+        <section class="popup-form mfp-hide popup" id="feedback">
             <div class="popup-wrapper">
                 <h2>Получить консультацию</h2>
                 <p>Оставьте заявку и наш менеджер свяжется с Вами и ответит на все Ваши вопросы</p>
                 <button class="popup-close">Закрыть окно</button>
-                <form id="feedback-form">
+                <form id="feedback-form" action method="post">
                     <div class="row">
-                            <br/>
-                            <div class="messages"></div>
-                            <br/>
                         <div class="col-md-6">
-                            <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text" name="name" id="name">
-                            <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email" name="email" id="email">
-                            <input placeholder="+ 7 (___) ___-__-__" type="tel" name="phone" id="phone">
+                            <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text" name="name">
+                            <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email" name="email">
+                            <input placeholder="+ 7 (___) ___-__-__" type="tel" name="phone">
                         </div>
                         <div class="col-md-6">
-                            <textarea placeholder="Сообщение" name="message" id="message"></textarea>
-                            <input class="btn btn-veda" id="submit" type="submit" value="Оставить заявку">
+                            <textarea placeholder="Сообщение" name="message"></textarea>
+                            <input class="btn btn-veda" type="submit" value="Оставить заявку">
                         </div>
                     </div>
                 </form>
             </div>
         </section>
-        <section class="popup-investment mfp-hide" id="book">
+        <section class="popup-investment mfp-hide popup" id="book">
                 <div class="popup-wrapper">
-                                <div class="investment-item-header investment-item-header-popup">
-                                    <h5>Инвестиционный пакет 1</h5>
-                                    <p class="investment-item-price">4 510 000 ₽</p>
-                                    <button class="popup-close">Закрыть окно</button>
-                                </div>
-                                <div class="popup-investment-body">
-                                    <h5>Выберите способ инвестиции</h5>
-                                    <form method="POST" action="" class="popup-investment-form">
+                                    <form id="investment-form" action method="post" class="popup-investment-form">
+                                        <div class="investment-item-header investment-item-header-popup">
+                                            <h5 id="form-header">Инвестиционный пакет 1</h5>
+                                            <input type="hidden" name="header" id="input-header">
+                                                <p class="investment-item-price" id="price">4 510 000 ₽</p>
+                                                <input type="hidden" name="price" id="input-price">
+                                                <button class="popup-close">Закрыть окно</button>
+                                        </div>
+                                        <div class="popup-investment-body">
+                                                <h5>Выберите способ инвестиции</h5>
                                         <div class="row">
                                             <div class="col-md-6 popup-investment-loan">
                                                 <p class="popup-investment-small">Необходимый подтвержденный доход</p>
@@ -510,38 +509,46 @@
                                                     <label for="loan">
                                                     Заемные
                                                 </label>
-                                                <p>Доход в месяц: <span>22 550 ₽</span></p>
+                                                <p>Доход в месяц: <span id="loan-money">22 550 ₽</span></p>
+                                                <input type="hidden" name="loan-money" id="input-loan">
                                             </div>
                                             <div class="col-md-6 popup-investment-self">
                                                     <input type="radio" name="money" id="self" value="Собственные">
                                                     <label for="self">
                                                         Собственные
                                                 </label>
-                                                <p>Доход в месяц: <span>62 119 ₽</span></p>
+                                                <p>Доход в месяц: <span id="self-money">62 119 ₽</span></p>
+                                                <input type="hidden" name="self-money" id="input-self">
                                             </div>
                                             <div class="col-sm-12">
                                                 <h5>Заполните заявку</h5>
                                                 <div class="row">
                                                         <div class="col-md-6">
-                                                                <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text">
-                                                                <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email">
-                                                                <input pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]-{2}-[0-9]{2}" placeholder="+ 7 (___) ___-__-__" type="tel">
+                                                                <input pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text" name="name">
+                                                                <input pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" placeholder="Эл. почта" type="email" name="email">
+                                                                <input placeholder="+ 7 (___) ___-__-__" type="tel" name="phone">
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <textarea placeholder="Сообщение"></textarea>
-                                                                <button class="btn btn-veda btn-book" type="submit" id="submit">Забронировать</button>
+                                                                <textarea placeholder="Сообщение" name="message"></textarea>
+                                                                <input class="btn btn-veda btn-book" type="submit" value="Забронировать">
                                                         </div>
                                                 </div>
                                                 
                                             </div>
                                         </div>
-                                       
+                                    </div>
                                     </form>
                                 
-                        </div>
+                        
                 </div>
             </section>
-            
+            <section class="popup-thanks popup mfp-hide" id="success">
+                <div class="popup-wrapper">
+                    <h2>Спасибо!</h2>
+                    <p>В скором времени наш менеджер свяжется с вами</p>
+                    <button class="btn btn-veda" id="close">Ок</button>
+                </div>
+            </section>
         <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip();
@@ -584,6 +591,9 @@
                 $(document).on('click', '.popup-close', function () {
                     $.magnificPopup.close();
                 });
+                $(document).on('click', '#close', function () {
+                    $.magnificPopup.close();
+                });
                 var mySwiper = new Swiper(".swiper-container", {
                     mode: 'horizontal',
                     slidesPerView: 1,
@@ -622,15 +632,30 @@
  
     myMap.geoObjects.add(myPlacemark);
  };
- $("#feedback-form").submit(function(){ 
-    var form = $(this); 
+ 
+ $("#feedback-form").submit(sendForm);
+   $("#faq-form").submit(sendForm); 
+   $("#investment-form").submit(sendForm);
+   $("#form-footer").submit(sendForm);
+            function sendForm() {
+                var form = $(this); 
     var error = false; 
-    form.find('input, textarea').each( function(){ 
+    form.find('input:not([type=hidden])').each( function(){ 
       if ($(this).val() == '') { 
-        alert('Зaпoлнитe пoлe "'+$(this).attr('placeholder')+'"!');
+        $(this).css("border-color", "red");
         error = true; 
       }
     });
+    if(form.children("#form-header").length > 0) {
+              var headerText = form.find("#form-header").text();
+              form.find("#input-header").val(headerText);
+              var selfText = form.find("#loan-money").text();
+              form.find("#input-loan").val(selfText);
+              var selfText = form.find("#self-money").text();
+              form.find("#input-self").val(selfText);
+              var selfText = form.find("#price").text();
+              form.find("#input-price").val(selfText);
+          };
     if (!error) { 
       var data = form.serialize();
       console.log(data);
@@ -640,18 +665,22 @@
         dataType: 'json', 
         data: data,
         beforeSend: function(data) { 
-          form.find('input[type="submit"]').attr('disabled', 'disabled'); 
+          form.find('input[type="submit"]').attr('disabled', 'disabled');
         },
         success: function(data){ 
           if (data['error']) { 
-            alert(data['error']);
+            console.log(data['error']);
           } else { 
-            alert('Письмo было отправлено, проверьте почту.');
+            $.magnificPopup.open({
+                items: {
+                    src: '#success'
+                    }
+                    });
           }
         },
         error: function (xhr, ajaxOptions, thrownError) { 
-          alert(xhr.status); 
-          alert(thrownError);
+          console.log(xhr.status); 
+          console.log(thrownError);
         },
         complete: function(data) {
           form.find('input[type="submit"]').prop('disabled', false); 
@@ -660,8 +689,8 @@
            });
     }
     return false;
-});
-            })
+}
+        })
         </script>
         <script src="js/swiper.min.js"></script>
     </body>
