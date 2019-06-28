@@ -493,16 +493,16 @@
         </section>
         <section class="popup-investment mfp-hide popup" id="book">
                 <div class="popup-wrapper">
+                        <div class="investment-item-header investment-item-header-popup">
+                                <h5 id="form-header">Инвестиционный пакет 1</h5>
+                                    <p class="investment-item-price" id="price">4 510 000 ₽</p>
+                                    <button class="popup-close">Закрыть окно</button>
+                            </div>
+                            <div class="popup-investment-body">
+                                    <h5>Выберите способ инвестиции</h5>
                                     <form id="investment-form" action method="post" class="popup-investment-form">
-                                        <div class="investment-item-header investment-item-header-popup">
-                                            <h5 id="form-header">Инвестиционный пакет 1</h5>
                                             <input type="hidden" name="header" id="input-header">
-                                                <p class="investment-item-price" id="price">4 510 000 ₽</p>
-                                                <input type="hidden" name="price" id="input-price">
-                                                <button class="popup-close">Закрыть окно</button>
-                                        </div>
-                                        <div class="popup-investment-body">
-                                                <h5>Выберите способ инвестиции</h5>
+                                            <input type="hidden" name="price" id="input-price">
                                         <div class="row">
                                             <div class="col-md-6 popup-investment-loan">
                                                 <p class="popup-investment-small">Необходимый подтвержденный доход</p>
@@ -537,8 +537,9 @@
                                                 
                                             </div>
                                         </div>
-                                    </div>
+                                    
                                     </form>
+                                </div>
                                 
                         
                 </div>
@@ -633,6 +634,7 @@
  $("#feedback-form").submit(sendForm);
    $("#faq-form").submit(sendForm); 
    $("#investment-form").submit(sendForm);
+
    $("#form-footer").submit(sendForm);
             function sendForm() {
                 var form = $(this); 
@@ -643,15 +645,16 @@
         error = true; 
       }
     });
-    if(form.children("#form-header").length > 0) {
-              var headerText = form.find("#form-header").text();
+    if(form.children("#input-header").length > 0) {
+        var popup = form.closest('.popup-investment');
+              var headerText = popup.find("#form-header").text();
               form.find("#input-header").val(headerText);
+              var selfText = popup.find("#price").text();
+              form.find("#input-price").val(selfText);
               var selfText = form.find("#loan-money").text();
               form.find("#input-loan").val(selfText);
               var selfText = form.find("#self-money").text();
               form.find("#input-self").val(selfText);
-              var selfText = form.find("#price").text();
-              form.find("#input-price").val(selfText);
           };
     if (!error) { 
       var data = form.serialize();
