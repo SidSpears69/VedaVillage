@@ -85,13 +85,15 @@ input {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1;
+  line-height: 16px;
   padding: 22px 20px;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+input[type="submit"] {
+  height: auto;
+}
 input:focus {
 border: 2px solid #338ABE;
 }
@@ -109,7 +111,6 @@ textarea {
   font-size: 16px;
   line-height: 1;
   padding: 22px 20px;
-  min-height: 150px;
   margin-bottom: 20px;
   border: 2px solid #F2F2F2;
 }
@@ -154,10 +155,10 @@ border: 2px solid #338ABE;
 }
 .contact-row {
   margin-top: 25px;
-  align-self: center;
+  margin-bottom: 10px;
 }
-.header .col-xl-4 {
-  display: flex;
+.header .btn-contact {
+  text-decoration: underline;
 }
 .header .email {
   text-decoration: underline;
@@ -184,6 +185,8 @@ border: 2px solid #338ABE;
   margin-top: 35px;
   max-width: 1920px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 .swiper-slide-duplicate {
   overflow: hidden;
@@ -307,6 +310,7 @@ border: 2px solid #338ABE;
   margin-right: 20px;
   font-weight: 300;
   margin-bottom: 0;
+  width: 52%;
 }
 .btn-veda,
 .faq-form .btn-veda {
@@ -461,6 +465,9 @@ border: none;
   line-height: 1;
   padding: 8px 0;
 }
+.faq-form .btn-veda {
+  margin-right: auto;
+}
 .investment {
     position: relative;
     margin-bottom: 80px;
@@ -531,6 +538,12 @@ border: none;
   margin-left: auto;
   margin-right: auto;
 }
+.btn-investment:focus,
+.btn-investment:hover,
+.btn-investment:active {
+  border: none;
+  box-shadow: none;
+}
 .investment-item-header-grey {
   background: #828282;
 }
@@ -599,7 +612,7 @@ border: none;
 }
 .form-img {
     position: absolute;
-    top: -52px;
+    top: -50px;
 }
 
 .form-wrapper {
@@ -856,6 +869,19 @@ border: none;
   width: 100%;
   max-width: 280px;
 }
+.veda-form .col-md-6{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.veda-form input {
+  height: 64px;
+  margin: 0;
+}
+.veda-form textarea {
+  height: 148px;
+  margin-bottom: 20px;
+}
 @media (max-width: 1199px) {
     body {
         font-size: 14px;
@@ -936,9 +962,6 @@ border: none;
     }
 }
 @media(max-width: 991px) {
-  textarea {
-    min-height: 148px;
-  }
     .header-contact {
         margin-left: auto;
     }
@@ -1008,7 +1031,6 @@ border: none;
     }
     .form textarea {
         padding: 15px 10px;
-        margin-bottom: 0;
         min-height: 120px;
     }
     .form-img img {
@@ -1044,6 +1066,12 @@ border: none;
     }
     .popup-thanks {
       width: 40%;
+    }
+    .veda-form input {
+      height: 50px;
+    }
+    .veda-form textarea {
+      height: 120px;
     }
 }
 @media(max-width: 767px) {
@@ -1129,9 +1157,7 @@ border: none;
     .form h2 {
       margin-left: -15px;
     }
-    .form textarea {
-        margin-top: 20px;
-    }
+
     .faq-option {
       width: 100%;
     }
@@ -1152,6 +1178,12 @@ border: none;
     }
     .popup-thanks {
       width: 50%;
+    }
+    .veda-form input {
+      margin-bottom: 20px;
+    }
+    .how-working-request {
+      justify-content: flex-start;
     }
 }
 @media(max-width: 575px) {
