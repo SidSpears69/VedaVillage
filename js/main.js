@@ -26,7 +26,16 @@ $(function () {
     $(".investment-item").click(function () {
         var header = $(this).find(".investment-item-header");
         var color = header.css("background-color");
-        $(".investment-item-header-popup").css("background-color", color)
+        $(".investment-item-header-popup").css("background-color", color);
+        var price = $(this).find(".investment-item-price");
+        var priceText = price.text();
+        $(".investment-item-price").text(priceText);
+        var loan = $(this).find(".investment-item-loan");
+        var loanText = loan.text();
+        $("#loan-money").text(loanText);
+        var self = $(this).find(".investment-item-self");
+        var selfText = self.text();
+        $("#self-money").text(selfText);
     })
     $(document).on('click', '.popup-close', function () {
         $.magnificPopup.close();

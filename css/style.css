@@ -210,7 +210,15 @@ border: 2px solid #338ABE;
 .slider-text {
   font-size: 28px;
 }
-
+.swiper-slide h2 {
+  font-size: 64px;
+  font-weight: 800;
+  font-style: normal;
+  color: #2a3589;
+  background: none;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
 .slider-description {
   width: 388px;
   position: absolute;
